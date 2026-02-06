@@ -14,7 +14,7 @@
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      background-color: #ededed;
+      --my-card-bg-color: #D2DCE4;
     }
     polaris-chip {
       margin: 16px;
@@ -31,8 +31,41 @@
   <polaris-chip title="Sports are the only thing that matter"></polaris-chip>
   <polaris-chip title="Grants and donations"></polaris-chip>
 
-  <h1>my-card</h1>
-  <my-card></my-card>
+  <h1>My Card</h1>
+  <my-card 
+    title="Clippy Card!"
+    link="https://hax.psu.edu/" 
+    image="https://i.pinimg.com/originals/21/86/a6/2186a6ede0392eae08c4297a3ac3b84a.gif"
+    alt="GIF of Clippy reading a document">
+  </my-card>
+  <my-card
+    title="Dancing Card!" 
+    link="https://hax.psu.edu/" 
+    image="https://i.pinimg.com/originals/80/9c/52/809c52bce47f98c54418cbc0d7a347e5.gif" 
+    alt="Lil dude dancing"
+    btn="Check out HAX!">
+  </my-card>
+  <my-card
+    title="Cat Getting Groovy!" 
+    link="https://github.com/haxtheweb/edtechjoker/blob/master/draft-outline.md" 
+    image="https://i.pinimg.com/originals/60/51/5e/60515eca291621e67d0bb58f9df9e70d.gif" 
+    alt="Lil dude dancing"
+    btn="Class Github Page">
+  </my-card>
+  <my-card
+    title="Dancing Bug!" 
+    link="https://iam.hax.psu.edu/ank5688/sites/website/" 
+    image="https://i.pinimg.com/originals/1b/58/31/1b5831dbd8900841d372d9b66a62156a.gif" 
+    alt="Mr bug getting groovy"
+    btn="My HAX Website">
+  </my-card>
+  <my-card
+    title="Coding With Linux!" 
+    link="https://psu.instructure.com/courses/2443308" 
+    image="https://i.pinimg.com/originals/ba/e3/0e/bae30e0c7acfec296e5a30d0a75af0f1.gif" 
+    alt="Linux mascot coding"
+    btn="Canvas Class Page">
+  </my-card>
 
   <!-- this is what is bringing in the definition for this tag -->
   <script type="module" src="./src/polaris-chip.js"></script>
