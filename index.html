@@ -19,6 +19,11 @@
     polaris-chip {
       margin: 16px;
     }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+gap: 16px;
+padding: 16px;    }
   </style>
   <title>polaris-chip / my-card</title>
 </head>
@@ -32,12 +37,12 @@
   <polaris-chip title="Grants and donations"></polaris-chip>
 
   <h1>My Card</h1>
+  <div class="cards">
   <my-card 
     title="Clippy Card!"
     link="https://hax.psu.edu/" 
     image="https://i.pinimg.com/originals/21/86/a6/2186a6ede0392eae08c4297a3ac3b84a.gif"
-    alt="GIF of Clippy reading a document"
-    fancy>
+    alt="GIF of Clippy reading a document">
     <p>Clippy is here!</p>
   </my-card>
   <my-card
@@ -53,8 +58,7 @@
     link="https://github.com/haxtheweb/edtechjoker/blob/master/draft-outline.md" 
     image="https://i.pinimg.com/originals/60/51/5e/60515eca291621e67d0bb58f9df9e70d.gif" 
     alt="Lil dude dancing"
-    btn="Class Github Page"
-     fancy>
+    btn="Class Github Page">
      <p>dancing kitty</p>
   </my-card>
   <my-card
@@ -70,10 +74,10 @@
     link="https://psu.instructure.com/courses/2443308" 
     image="https://i.pinimg.com/originals/ba/e3/0e/bae30e0c7acfec296e5a30d0a75af0f1.gif" 
     alt="Linux mascot coding"
-    btn="Canvas Class Page"
-     fancy>
+    btn="Canvas Class Page">
      <p>little linux brother coding!</p>
   </my-card>
+  </div>
 
   <!-- this is what is bringing in the definition for this tag -->
   <script type="module" src="./src/polaris-chip.js"></script>

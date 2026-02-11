@@ -26,15 +26,17 @@ export class MyCard extends LitElement {
   static get styles() {
     return css`
         .card {
+  display:inline-block;
   text-align: center;
   background-color: var(--my-card-bg-color, #D0D7E7);
-  max-width: 400px;
+  width: 400px;
+  height: 500px;
   margin: 16px auto;
   padding: 16px;
 }
 
 :host([fancy]) {
-display: block;
+display: inline-block;
   background-color: pink;
   border: 2px solid fuchsia;
   box-shadow: 10px 5px 5px red;
