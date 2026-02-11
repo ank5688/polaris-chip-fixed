@@ -14,11 +14,12 @@ export class MyCard extends LitElement {
 
   constructor() {
     super();
-    this.title = "Clippy Card!";
-    this.link = "https://hax.psu.edu";
-    this.image="https://i.pinimg.com/originals/21/86/a6/2186a6ede0392eae08c4297a3ac3b84a.gif";
-    this.alt="GIF of Clippy reading a document";
-    this.btn="Details";
+    this.fancy = false;
+    this.title = "Card Title";
+    this.link = "";
+    this.image="";
+    this.alt="alt text for image";
+    this.btn="Button Text";
 
   }
 
@@ -30,6 +31,13 @@ export class MyCard extends LitElement {
   max-width: 400px;
   margin: 16px auto;
   padding: 16px;
+}
+
+:host([fancy]) {
+display: block;
+  background-color: pink;
+  border: 2px solid fuchsia;
+  box-shadow: 10px 5px 5px red;
 }
 
 .card-image {
@@ -60,13 +68,30 @@ h1 {
     `;
   }
 
+  // put this anywhere on the MyCard class; just above render() is probably good
+openChanged(e) {
+  console.log(e);
+  if (e.target.getAttribute('open') !== null) {
+    this.fancy = true;
+  }
+  else {
+    this.fancy = false;
+  }
+}
+
   render() {
     return html`
-<div id="cardlist" class="wrapper">
+  <div class="wrapper">
   <div class="card">
   <h2 class="card-title">${this.title}</h2>
   <img class="card-image" src="${this.image}" alt="${this.alt}"> 
-
+  <!-- put this in your render method where you had details -->
+  <details ?open="${this.fancy}" @toggle="${this.openChanged}">
+    <summary>Description</summary>
+      <div>
+        <slot>${this.description}</slot>
+      </div>
+</details>
   <a href="${this.link}" class="details-btn">
     <button class="btn"> ${this.btn}  </button>
   </a>
@@ -79,6 +104,7 @@ h1 {
     return {
       title: { type: String },
       link: { type: String },
+      fancy: { type: Boolean, reflect: true },
       image: { type: String },
       alt: { type: String },
       btn: { type: String }
