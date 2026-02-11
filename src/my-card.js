@@ -66,7 +66,10 @@ h1 {
     padding: 12px 40px;
     border-width: 6x;
   }
-
+  .desc {
+    max-height: 150px;
+    overflow-y: auto;
+  }
     `;
   }
 
@@ -90,7 +93,7 @@ openChanged(e) {
   <!-- put this in your render method where you had details -->
   <details ?open="${this.fancy}" @toggle="${this.openChanged}">
     <summary>Description</summary>
-      <div>
+      <div class="desc">
         <slot>${this.description}</slot>
       </div>
 </details>
