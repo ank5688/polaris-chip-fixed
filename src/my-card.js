@@ -43,9 +43,7 @@ display: inline-block;
 }
 
 .card-image {
-  width: 300px;
-  border: 10px solid #12152B;
-  border-radius: 10px;
+  width: 200px;
 }
 
 h1 {
